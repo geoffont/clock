@@ -4,14 +4,14 @@ const Clock = () => {
     const [date, setDate] = useState(new Date());
    
      React.useEffect(() => {
-        setInterval(() => {
+        const timer = setInterval(() => {
        
          setDate(new Date());
           }, 1000);
           return () => {
-            clearInterval(setInterval);
+            clearInterval(timer);
          };
-          },[date])
+          },[])
 
     return (
         <div>
