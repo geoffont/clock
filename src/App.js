@@ -9,8 +9,7 @@ function App() {
   }
   return (
     <div className="App">
-      { showClock ? < Clock  /> : null}
-       
+      { showClock && < Clock  /> }
       <button onClick={handleClick}>Button</button>
     </div>
   );
