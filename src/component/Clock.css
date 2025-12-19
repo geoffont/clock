@@ -1,0 +1,398 @@
+.space-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Étoiles scintillantes - 3 couches pour plus de profondeur */
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.stars {
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 60px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 90px 10px, #eee, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+.stars2 {
+    background-image:
+        radial-gradient(1px 1px at 40px 60px, #fff, transparent),
+        radial-gradient(1px 1px at 110px 90px, #ddd, transparent),
+        radial-gradient(2px 2px at 70px 20px, #eee, transparent),
+        radial-gradient(1px 1px at 160px 120px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    animation: twinkle 6s infinite ease-in-out;
+}
+
+.stars3 {
+    background-image:
+        radial-gradient(1px 1px at 80px 10px, #eee, transparent),
+        radial-gradient(2px 2px at 150px 150px, #fff, transparent),
+        radial-gradient(1px 1px at 30px 100px, #ddd, transparent),
+        radial-gradient(1px 1px at 100px 60px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    animation: twinkle 8s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Nébuleuses colorées */
+.nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+}
+
+.nebula1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6), rgba(75, 0, 130, 0.2));
+    top: -100px;
+    left: -100px;
+    animation: float 25s infinite ease-in-out;
+}
+
+.nebula2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.5), rgba(0, 100, 200, 0.2));
+    bottom: -50px;
+    right: -50px;
+    animation: float 30s infinite ease-in-out reverse;
+}
+
+.nebula3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.4), rgba(139, 0, 139, 0.2));
+    top: 50%;
+    right: 10%;
+    animation: float 35s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+/* Galaxie spirale en arrière-plan */
+.galaxy {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center,
+        rgba(100, 50, 200, 0.1) 0%,
+        rgba(50, 25, 100, 0.05) 30%,
+        transparent 70%);
+    border-radius: 50%;
+    animation: rotate 120s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Planètes */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.planet1 {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #c92a2a);
+    top: 15%;
+    right: 10%;
+    animation: orbit1 40s linear infinite;
+}
+
+.planet2 {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 35% 35%, #74c0fc, #1864ab);
+    bottom: 20%;
+    left: 8%;
+    animation: orbit2 50s linear infinite;
+}
+
+.planet3 {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 40% 30%, #ffd43b, #f59f00);
+    top: 60%;
+    right: 15%;
+    animation: orbit3 35s linear infinite reverse;
+}
+
+.planet4 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 40%, #a78bfa, #6d28d9);
+    top: 25%;
+    left: 12%;
+    animation: orbit4 45s linear infinite;
+}
+
+@keyframes orbit1 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(50px, 30px); }
+    50% { transform: translate(30px, 60px); }
+    75% { transform: translate(-20px, 40px); }
+}
+
+@keyframes orbit2 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-40px, -30px); }
+    50% { transform: translate(-60px, 20px); }
+    75% { transform: translate(-30px, 50px); }
+}
+
+@keyframes orbit3 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(40px, -25px); }
+    50% { transform: translate(20px, -50px); }
+    75% { transform: translate(-10px, -30px); }
+}
+
+@keyframes orbit4 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-30px, 40px); }
+    50% { transform: translate(20px, 70px); }
+    75% { transform: translate(40px, 35px); }
+}
+
+/* Horloge futuriste */
+.clock-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.clock-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(0, 255, 255, 0.15), transparent 70%);
+    filter: blur(40px);
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+.clock-frame {
+    position: relative;
+    background: rgba(10, 15, 30, 0.7);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 50px 80px;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 0 60px rgba(0, 255, 255, 0.3),
+        inset 0 0 60px rgba(0, 255, 255, 0.05),
+        0 0 100px rgba(138, 43, 226, 0.2);
+}
+
+.clock-display {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.time-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-value {
+    font-family: 'Courier New', monospace;
+    font-size: 120px;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow:
+        0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.6),
+        0 0 60px rgba(0, 255, 255, 0.4),
+        0 0 80px rgba(0, 255, 255, 0.2);
+    letter-spacing: 5px;
+    animation: glow 2s infinite ease-in-out;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow:
+            0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 40px rgba(0, 255, 255, 0.6),
+            0 0 60px rgba(0, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow:
+            0 0 30px rgba(0, 255, 255, 1),
+            0 0 60px rgba(0, 255, 255, 0.8),
+            0 0 90px rgba(0, 255, 255, 0.6);
+    }
+}
+
+.time-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: rgba(0, 255, 255, 0.6);
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.time-separator {
+    font-family: 'Courier New', monospace;
+    font-size: 100px;
+    color: #ff00ff;
+    text-shadow:
+        0 0 20px rgba(255, 0, 255, 0.8),
+        0 0 40px rgba(255, 0, 255, 0.6);
+    margin: 0 10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49%, 100% { opacity: 1; }
+    50%, 99% { opacity: 0.3; }
+}
+
+/* Décorations d'angle */
+.clock-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.corner-tl {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+}
+
+.corner-tr {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+    border-top-right-radius: 5px;
+}
+
+.corner-bl {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+}
+
+.corner-br {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .time-value {
+        font-size: 80px;
+    }
+
+    .time-separator {
+        font-size: 70px;
+    }
+
+    .clock-frame {
+        padding: 40px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .time-value {
+        font-size: 50px;
+    }
+
+    .time-separator {
+        font-size: 45px;
+    }
+
+    .clock-frame {
+        padding: 30px 40px;
+    }
+
+    .time-label {
+        font-size: 10px;
+    }
+
+    .planet1, .planet2, .planet3, .planet4 {
+        width: 40px;
+        height: 40px;
+    }
+}
